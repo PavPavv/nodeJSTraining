@@ -1,0 +1,25 @@
+{
+  "name": "nodejsepamprogram",
+  "version": "1.0.0",
+  "description": "EPAM mentee nodeJS program",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PavPavv/nodeJSTraining.git"
+  },
+  "keywords": [
+    "nodeJS"
+  ],
+  "author": "Pavel Durnov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PavPavv/nodeJSTraining/issues"
+  },
+  "homepage": "https://github.com/PavPavv/nodeJSTraining#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
