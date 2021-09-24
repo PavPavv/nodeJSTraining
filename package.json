@@ -4,7 +4,8 @@
   "description": "EPAM mentee nodeJS program",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "task1": "nodemon src/task1-1.js"
   },
   "repository": {
     "type": "git",
