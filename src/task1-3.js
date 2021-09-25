@@ -1,11 +1,11 @@
-const fs = require('fs');
-const path = require('path');
-const csv = require('csvtojson');
+import { readFile, writeFile } from 'fs';
+import { join } from 'path';
+import csv from 'csvtojson';
 
 //const csvPath = './src/csv/file.csv';
-const csvPath = path.join(__dirname, './csv/file.csv');
+const csvPath = join(__dirname, './csv/file.csv');
 
-fs.readFile(csvPath, 'utf8', (error, file) => {
+readFile(csvPath, 'utf8', (error, file) => {
   if (error) {
     return console.error(error.message);
   }
@@ -15,10 +15,10 @@ fs.readFile(csvPath, 'utf8', (error, file) => {
     .then((jsonObj)=>{
       const str = jsonObj.map(item => JSON.stringify(item)).join('\n');
 
-      fs.writeFile(path.join(__dirname, './file.txt'), str, 'utf8', (error) => {
+      writeFile(join(__dirname, './file.txt'), str, 'utf8', (error) => {
         console.log('file has been written');
       });
     });
 });
 
-console.log('Loading...')
+console.log('Loading...');
