@@ -1,9 +1,9 @@
 # NodeJS Global Mentoring Program [2021Q3 RU:PR3]
 Mentee: **Pavel Durnov**
 
-#### Module 1: Help module (done)
+### Module 1: Help module (done)
 
-#### Module 2: Basics. Node.js fundamental theory (done)
+### Module 2: Basics. Node.js fundamental theory (done)
 **Comment**: 
 1. In order to test this module clone the repository with **git clone** command in the terminal (if you are using HTTPS connection the path would be 'https://github.com/PavPavv/nodeJSTraining.git').
 2. Open project in your code editor.
@@ -16,4 +16,4 @@ Mentee: **Pavel Durnov**
 
 P.S. Sorry for inconveniences with the branches and the local npm packages, I've not decided yet with homework repo format, so I factorize every step in order to check everything in the beginning. If you are have a better approach I am open to suggestions. But anyway I am going to try to find more straightforward way to organize my homework starting from the next module.
 
-#### Module 3: In-memory CRUD REST service with validation (in progress...)
+### Module 3: In-memory CRUD REST service with validation (in progress...)
