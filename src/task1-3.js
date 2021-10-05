@@ -2,7 +2,6 @@ import { readFile, writeFile } from 'fs';
 import { join } from 'path';
 import csv from 'csvtojson';
 
-//const csvPath = './src/csv/file.csv';
 const csvPath = join(__dirname, './csv/file.csv');
 
 readFile(csvPath, 'utf8', (error, file) => {
