@@ -3,21 +3,28 @@ const path = require('path');
 const csv = require('csvtojson');
 
 const csvPath = path.join(__dirname, './csv/file.csv');
+const textPath = path.join(__dirname, 'file.txt');
 
-fs.readFile(csvPath, 'utf8', (error, file) => {
-  if (error) {
-    return console.error(error.message);
-  }
 
-  csv()
-    .fromFile(csvPath)
-    .then((jsonObj)=>{
-      const str = jsonObj.map(item => JSON.stringify(item)).join('\n');
+const processLineByLine = async () => {
+  const readStream = fs.createReadStream(csvPath, {
+    highWaterMark: 10,
+  });
+  const writeStream = fs.createWriteStream(textPath, 'utf-8');
 
-      fs.writeFile(path.join(__dirname, './file.txt'), str, 'utf8', (error) => {
-        console.log('file has been written');
-      });
-    })
-});
+  readStream.pipe(csv()).pipe(writeStream);
 
-console.log('Loading...')
+  readStream.on('end', () => {
+    writeStream.end();
+    console.log('The file has been written.')
+  });
+
+  readStream.on('error', (error) => {
+    console.log('problem with reading file', error);
+  });
+
+  writeStream.on('error', (error) => {
+    console.log('problem with writing file', error);
+  });
+}; 
+processLineByLine();
